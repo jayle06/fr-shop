@@ -25,9 +25,9 @@
             <div class="login">
                 <img class="icon-login" src="@/assets/icons/login-icon.png" alt="icon-login" />
                 <div class="text-login">
-                    <router-link to="/login" class="router" v-if="!isAuthenticated" @click="TOGGLE_AUTH"><span>Log in / Register</span></router-link>
+                    <router-link to="/login" class="router" v-if="!isAuthenticated" @click="TOGGLE_AUTH"><span>Log in </span></router-link>
                     <!-- <router-link to="/register" class="router"><span>Register</span></router-link> -->
-                    <span v-if="isAuthenticated" @click="logout">Log out</span>
+                    <span v-if="isAuthenticated" @click="logout">Logout</span>
                 </div>
             </div>
 
@@ -43,6 +43,7 @@
 import axios from "axios";
 import { mapMutations, mapActions, mapGetters } from 'vuex'
 export default {
+  name: 'NavBar',
     data(){
         return {
             searchKey: "",

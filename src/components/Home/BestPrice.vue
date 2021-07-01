@@ -22,6 +22,7 @@
 import axios from "axios";
 
 export default {
+  name: 'BestPrice',
     data() {
         return {
             products : [],

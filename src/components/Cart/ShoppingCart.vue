@@ -48,6 +48,7 @@ import Payment from './Payment.vue'
 import Modal from './Modal.vue'
 
 export default {
+  name: 'ShoppingCart',
     components: {
         Payment,
         Modal

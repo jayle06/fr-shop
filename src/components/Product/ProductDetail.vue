@@ -48,6 +48,7 @@
 import axios from "axios";
 
 export default {
+  name: 'ProductDetail',
     data() {
         return {
             product : {},

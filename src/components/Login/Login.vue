@@ -20,26 +20,41 @@
 </template>
 <script>
 import axios from "axios";
+import {ref} from 'vue';
 
 export default {
     name: 'Login',
-    data(){
-        return {
-            username: "",
-            password: "",
-        }
-    },
-    methods: {
-        async handleSubmit(){
+    setup() {
+        const username = ref('');
+        const password = ref('');
+        const handleSubmit = async() => {
             await axios.post('http://127.0.0.1:3000/api/v1/login', {
-                username: this.username,
-                password: this.password,
-            }).then((response) => {
-                localStorage.setItem('token', response.data.value);
-            })
-            this.$router.push('/');
+                    username: username.value,
+                    password: password.value,
+                }, {withCredentials: true});
+            await this.$router.push('/');
+        }
+        return {
+            username,
+            password,
+            handleSubmit
         }
     },
+    // data(){
+    //     return {
+    //         username: "",
+    //         password: "",
+    //     }
+    // },
+    // methods: {
+    //     async handleSubmit(){
+    //         await axios.post('http://127.0.0.1:3000/api/v1/login', {
+    //             username: this.username,
+    //             password: this.password,
+    //         }, {withCredentials: true});
+    //         this.$router.push('/');
+    //     }
+    // },
 }
 </script>
 <style scoped>

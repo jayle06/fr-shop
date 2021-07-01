@@ -18,6 +18,7 @@
 <script>
 import { mapActions, mapGetters} from 'vuex'
 export default {
+  name: 'SearchProducts',
     computed: mapGetters(['items']),
 	created() {
 		this.loadItems()

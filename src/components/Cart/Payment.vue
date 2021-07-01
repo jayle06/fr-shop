@@ -52,6 +52,7 @@
 <script>
 import axios from "axios";
     export default {
+      name: 'Payment',
         props : ["products"],
         data() {
             return {
